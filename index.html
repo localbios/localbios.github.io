@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LocalBios // Homepage</title>
+    <title>LocalBios - Bio Hosting Service</title>
     <style>
         /* Global Styles */
         body {
-            background-color: #121212; /* Very dark background */
+            background-color: #0a0a0a; /* Dark background */
             color: #e0e0e0; /* Light gray for text */
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -21,38 +21,39 @@
         h1 {
             margin-bottom: 20px;
             color: #ffdd57; /* Bright yellow for title */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
 
         .tabs {
             display: flex;
             margin-bottom: 20px;
             cursor: pointer;
+            border-bottom: 2px solid #ffdd57; /* Yellow underline for active tab */
         }
 
         .tab {
-            background-color: #2e1a5d; /* Tab background color */
+            background-color: transparent; /* Transparent background for tabs */
             color: #ffffff;
             padding: 10px 20px;
-            border-radius: 5px 5px 0 0;
             margin: 0 5px;
-            transition: background-color 0.3s;
+            transition: color 0.3s;
         }
 
         .tab:hover {
-            background-color: #4b007b; /* Hover effect */
+            color: #ffdd57; /* Hover effect */
         }
 
         .tab.active {
-            background-color: #4b007b; /* Active tab color */
+            border-bottom: 2px solid #ffdd57; /* Active tab underline */
             font-weight: bold;
         }
 
         .content {
-            background-color: #2e1a5d; /* Content background color */
+            background-color: #1e1e1e; /* Content background color */
             border-radius: 10px;
             padding: 20px;
             width: 300px; /* Fixed width for profiles */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
             display: none; /* Hide by default */
         }
 
@@ -61,24 +62,25 @@
         }
 
         .profile {
-            background: linear-gradient(135deg, #4b007b, #b2006d); /* Gradient from dark purple to pink */
+            background: linear-gradient(135deg, #4b007b, #b2006d); /* Gradient */
             border-radius: 12px;
-            padding: 20px;
+            padding: 15px;
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
             margin: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
         .profile:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
         }
 
         .pfp {
             border-radius: 50%;
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             margin-bottom: 15px;
             border: 4px solid #ffffff;
         }
@@ -87,20 +89,19 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 100%;
         }
 
         .name {
-            font-size: 1.6em;
+            font-size: 1.4em;
             margin-bottom: 5px;
             font-weight: bold;
             color: #ffdd57;
         }
 
         .bio {
-            font-size: 0.95em;
+            font-size: 0.85em;
             color: #ffffff;
-            opacity: 0.8;
+            opacity: 0.9;
         }
 
         @media (max-width: 600px) {
@@ -108,14 +109,14 @@
                 width: 90%; /* Responsive width */
             }
             .pfp {
-                width: 80px;
+                width: 80px; /* Smaller profile picture on mobile */
                 height: 80px;
             }
             .name {
-                font-size: 1.4em; /* Smaller name font on mobile */
+                font-size: 1.2em; /* Smaller name font on mobile */
             }
             .bio {
-                font-size: 0.85em; /* Smaller bio font on mobile */
+                font-size: 0.75em; /* Smaller bio font on mobile */
             }
         }
     </style>
@@ -124,12 +125,12 @@
     <h1>LocalBios</h1>
     <div class="tabs">
         <div class="tab active" onclick="showContent('home')">Home</div>
-        <div class="tab" onclick="showContent('profiles')">Profiles</div>
+        <div class="tab" onclick="showContent('profiles')">Users</div>
     </div>
 
     <div id="home" class="content active">
-        <p>Welcome to LocalBios!</p>
-        <p>We are currently NOT open for new users/</p>
+        <p>Welcome to LocalBios! Showcase your unique profile and connect with others.</p>
+        <p>We are currently closed for new sign-ups.</p>
     </div>
 
     <div id="profiles" class="content">
