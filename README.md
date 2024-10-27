@@ -1,2 +1,2 @@
-# korporated.github.io
-Just my random website
+# stupid funny webstite
+uhhuhuhhu yeah
