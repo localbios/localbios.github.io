@@ -37,12 +37,19 @@
             background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
         }
 
+        /* Name and Icon Container */
+        #name-container {
+            display: flex;
+            align-items: center;
+        }
+
         /* Name Styling */
         #name {
             font-size: 3em;
             font-weight: bold;
             color: #ffffff; /* Change text color */
             margin-bottom: 10px; /* Space below the name */
+            margin-right: 10px; /* Space between name and icons */
         }
 
         /* Profile Picture */
@@ -90,8 +97,7 @@
         .icon-container {
             display: flex;
             gap: 10px;
-            justify-content: center;
-            margin-top: 20px;
+            margin-left: 10px; /* Space to separate icons from the name */
         }
 
         .icon {
@@ -102,6 +108,51 @@
 
         .icon:hover {
             transform: scale(1.1);
+        }
+
+        /* Owner Icon */
+        .owner-icon {
+            position: relative;
+        }
+
+        /* Tooltip Styling */
+        .tooltip {
+            visibility: hidden;
+            width: 120px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; /* Position above the icon */
+            left: 50%;
+            margin-left: -60px; /* Center the tooltip */
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .owner-icon:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Discord Invite Embed */
+        #discord-invite {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            text-align: left;
+            display: flex;
+            align-items: center;
+        }
+
+        #discord-invite img {
+            width: 40px; /* Discord logo size */
+            height: 40px;
+            margin-right: 10px; /* Space between logo and text */
         }
 
         /* Audio Player Styling */
@@ -127,19 +178,32 @@
         <img id="profile-pic" src="https://cdn.pfps.gg/pfps/5608-blue-kirby.png" alt="Profile Picture">
         
         <div>
-            <!-- Name -->
-            <div id="name">korp!</div>
+            <!-- Name and Icons -->
+            <div id="name-container">
+                <div class="owner-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Discord_logo_and_wordmark.svg" alt="Owner" class="icon">
+                    <span class="tooltip">Korp // Owner</span>
+                </div>
+                <div id="name">korp!</div>
+                <div class="icon-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML" class="icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS" class="icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" class="icon">
+                </div>
+            </div>
             
             <!-- Bio Text with Typing Effect -->
             <div id="bio-container">
                 <p class="typing-effect">Founder @ LocalBios</p>
             </div>
 
-            <!-- Coding Language Icons -->
-            <div class="icon-container">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML" class="icon">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS" class="icon">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" class="icon">
+            <!-- Discord Invite Embed -->
+            <div id="discord-invite">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Discord_logo_and_wordmark.svg" alt="Discord Logo">
+                <div>
+                    <strong>C# Clan</strong><br>
+                    <a href="https://discord.gg/XhZ7m4FC7p" style="color: white; text-decoration: underline;">https://discord.gg/c#</a>
+                </div>
             </div>
         </div>
     </div>
