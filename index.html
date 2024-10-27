@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Korp Profile</title>
+  <title>korp :3</title>
   
   <style>
     /* Basic Reset */
@@ -30,6 +30,7 @@
       border-radius: 10px;
       width: 300px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1.5s ease;
     }
 
     /* Profile Name */
@@ -37,6 +38,7 @@
       font-size: 2.5em;
       font-weight: bold;
       margin-bottom: 10px;
+      animation: slideIn 1s ease-out;
     }
 
     /* Profile Picture */
@@ -54,6 +56,7 @@
       font-size: 1em;
       color: #ccc;
       margin: 10px 0 20px;
+      animation: fadeIn 1.5s ease;
     }
 
     /* Button Icons */
@@ -62,11 +65,13 @@
       gap: 15px;
       justify-content: center;
       margin-top: 15px;
+      animation: popIn 1.5s ease;
     }
     .button {
       width: 40px;
       height: 40px;
       transition: transform 0.2s;
+      border-radius: 5px;
     }
     .button:hover {
       transform: scale(1.1);
@@ -78,14 +83,53 @@
       gap: 10px;
       justify-content: center;
       margin-top: 20px;
+      animation: popIn 1.5s ease;
     }
     .icon {
       width: 30px;
       height: 30px;
       transition: transform 0.2s;
+      filter: brightness(0.8);
     }
     .icon:hover {
       transform: scale(1.1);
+      filter: brightness(1);
+    }
+
+    /* Embed Box */
+    .embed-box {
+      background-color: #36393f;
+      color: #b9bbbe;
+      border-left: 5px solid #5865f2;
+      padding: 10px;
+      margin-top: 20px;
+      border-radius: 5px;
+      animation: fadeIn 1.5s ease;
+    }
+    .embed-title {
+      color: white;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    .embed-description {
+      font-size: 0.9em;
+      color: #b9bbbe;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
   </style>
 </head>
@@ -108,7 +152,7 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube" class="button">
       </a>
       <a href="https://www.tiktok.com" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/Tiktok_logo_%282022%29.svg/1200px-Tiktok_logo_%282022%29.svg.png" alt="TikTok" class="button">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/TikTok-logo.svg" alt="TikTok" class="button">
       </a>
       <a href="https://discord.com" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Discord_Logo_sans_text.svg" alt="Discord" class="button">
@@ -121,6 +165,12 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML" class="icon">
       <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS" class="icon">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" class="icon">
+    </div>
+
+    <!-- Embed Box -->
+    <div class="embed-box">
+      <div class="embed-title">korp</div>
+      <div class="embed-description">korp's silly website</div>
     </div>
   </div>
 
