@@ -24,6 +24,7 @@
             background-image: url('https://i.pinimg.com/originals/fd/40/a4/fd40a4b8b151c4e432106576187d03c9.gif'); /* Pixel art GIF background */
             background-size: cover; /* Cover the entire background */
             color: white;
+            position: relative; /* Position relative for absolute children */
         }
 
         /* Main Content Styling */
@@ -59,12 +60,32 @@
             margin: 15px 0;
         }
 
-        /* Audio Player Styling */
-        #audio-player {
+        /* Coding Icons */
+        .icon-container {
             display: flex;
-            align-items: center;
+            gap: 10px;
             justify-content: center;
             margin-top: 20px;
+        }
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.2s;
+        }
+
+        .icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Audio Player Styling */
+        #audio-player {
+            position: absolute; /* Position at the bottom left */
+            left: 20px;
+            bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
             font-size: 1em;
             color: #fff;
             backdrop-filter: blur(10px); /* Blur effect for the player */
@@ -75,7 +96,7 @@
 
         /* Progress Bar */
         #progress {
-            width: 100%;
+            width: 100px; /* Set a fixed width for the progress bar */
             height: 5px;
             background: #555;
             cursor: pointer;
@@ -111,17 +132,24 @@
         <!-- Bio Text -->
         <p id="bio">Founder @ LocalBios</p>
 
-        <!-- Audio Player -->
-        <div id="audio-player">
-            <audio id="audio" controls>
-                <source src="https://www.musicverter.com/4b1ddb56-9b52-485e-b470-b716de7366a7" type="audio/mpeg"> <!-- Replace with your audio file -->
-                Your browser does not support the audio element.
-            </audio>
-            <input type="range" id="progress" value="0" step="1" min="0" />
-            <button class="audio-button" id="play">Play</button>
-            <button class="audio-button" id="pause">Pause</button>
-            <span id="song-title">90mh</span> <!-- Change manually -->
+        <!-- Coding Language Icons -->
+        <div class="icon-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML" class="icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS" class="icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" class="icon">
         </div>
+    </div>
+
+    <!-- Audio Player -->
+    <div id="audio-player">
+        <audio id="audio" controls>
+            <source src="https://www.musicverter.com/4b1ddb56-9b52-485e-b470-b716de7366a7" type="audio/mpeg"> <!-- Music link -->
+            Your browser does not support the audio element.
+        </audio>
+        <input type="range" id="progress" value="0" step="1" min="0" />
+        <button class="audio-button" id="play">Play</button>
+        <button class="audio-button" id="pause">Pause</button>
+        <span id="song-title">Your Song Title Here</span> <!-- Change manually -->
     </div>
 
     <script>
