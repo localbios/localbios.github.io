@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown to CHROMOKOPIA</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #00ff00; /* Green background */
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+        }
+
+        /* Logo Styling */
+        #logo {
+            max-width: 80%; /* Responsive logo size */
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        /* Countdown Timer Styling */
+        #countdown {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CHROMOKOPIA Logo -->
+    <img id="logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Tyler_the_Creator_-_CHROMOKOPIA.png/220px-Tyler_the_Creator_-_CHROMOKOPIA.png" alt="CHROMOKOPIA Logo">
+
+    <!-- Countdown Timer -->
+    <div id="countdown">Loading...</div>
+
+    <script>
+        // Set the date we're counting down to
+        const countdownDate = new Date("October 28, 2024 06:00:00").getTime();
+
+        // Update the countdown every second
+        const countdownFunction = setInterval(function() {
+            // Get today's date and time
+            const now = new Date().getTime();
+
+            // Find the distance between now and the countdown date
+            const distance = countdownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the countdown element
+            document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            // If the countdown is over, write some text
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "Event Started!";
+            }
+        }, 1000);
+    </script>
+    
+</body>
+</html>
