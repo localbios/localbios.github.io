@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        /* Global Styles */
+        body {
+            background-color: #1a0d28; /* Dark background */
+            color: white; /* Text color */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile {
+            background-color: #2e1a5d; /* Dark purple */
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .profile:hover {
+            transform: scale(1.05); /* Scale effect on hover */
+        }
+
+        .pfp {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 15px;
+        }
+
+        .text-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .square {
+            background-color: #4b2a8d; /* Slightly lighter purple */
+            border-radius: 8px;
+            padding: 15px;
+            width: 120px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile" onclick="window.location.href='/index'">
+            <img src="path/to/your/profile-pic.jpg" alt="Profile Picture" class="pfp">
+            <div class="text-container">
+                <div class="square">
+                    <h2 class="name">Your Name</h2>
+                </div>
+                <div class="square">
+                    <h2 class="bio">Your Bio</h2>
+                </div>
+            </div>
+        </div>
+        <!-- Add more profile sections here -->
+    </div>
+</body>
+</html>
