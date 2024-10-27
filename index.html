@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home // LocalBios</title>
+    <title>LocalBios // Homepage</title>
     <style>
         /* Global Styles */
         body {
@@ -12,16 +12,52 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             height: 100vh;
             padding: 20px;
         }
 
-        .container {
+        h1 {
+            margin-bottom: 20px;
+            color: #ffdd57; /* Bright yellow for title */
+        }
+
+        .tabs {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .tab {
+            background-color: #2e1a5d; /* Tab background color */
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 5px 5px 0 0;
+            margin: 0 5px;
+            transition: background-color 0.3s;
+        }
+
+        .tab:hover {
+            background-color: #4b007b; /* Hover effect */
+        }
+
+        .tab.active {
+            background-color: #4b007b; /* Active tab color */
+            font-weight: bold;
+        }
+
+        .content {
+            background-color: #2e1a5d; /* Content background color */
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px; /* Fixed width for profiles */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            display: none; /* Hide by default */
+        }
+
+        .content.active {
+            display: block; /* Show active content */
         }
 
         .profile {
@@ -31,22 +67,20 @@
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
-            margin: 10px;
-            width: 300px; /* Set a fixed width for consistency */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+            margin: 10px 0;
         }
 
         .profile:hover {
-            transform: translateY(-5px); /* Lift effect on hover */
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
         }
 
         .pfp {
             border-radius: 50%;
-            width: 120px; /* Slightly larger profile picture */
+            width: 120px;
             height: 120px;
             margin-bottom: 15px;
-            border: 4px solid #ffffff; /* White border for profile picture */
+            border: 4px solid #ffffff;
         }
 
         .text-container {
@@ -57,32 +91,29 @@
         }
 
         .name {
-            font-size: 1.6em; /* Larger font for name */
+            font-size: 1.6em;
             margin-bottom: 5px;
-            font-weight: bold; /* Bold text for name */
-            color: #ffdd57; /* Bright yellow color for name */
+            font-weight: bold;
+            color: #ffdd57;
         }
 
         .bio {
-            font-size: 0.95em; /* Slightly larger bio font */
-            color: #ffffff; /* White color for bio */
-            opacity: 0.8; /* Slight transparency for bio */
+            font-size: 0.95em;
+            color: #ffffff;
+            opacity: 0.8;
         }
 
         @media (max-width: 600px) {
-            .profile {
+            .content {
                 width: 90%; /* Responsive width */
             }
-
             .pfp {
-                width: 80px; /* Smaller profile picture on mobile */
+                width: 80px;
                 height: 80px;
             }
-
             .name {
                 font-size: 1.4em; /* Smaller name font on mobile */
             }
-
             .bio {
                 font-size: 0.85em; /* Smaller bio font on mobile */
             }
@@ -90,15 +121,44 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="profile" onclick="window.location.href='/korp'">
+    <h1>LocalBios</h1>
+    <div class="tabs">
+        <div class="tab active" onclick="showContent('home')">Home</div>
+        <div class="tab" onclick="showContent('profiles')">Profiles</div>
+    </div>
+
+    <div id="home" class="content active">
+        <p>Welcome to LocalBios!</p>
+        <p>We are currently NOT open for new users/</p>
+    </div>
+
+    <div id="profiles" class="content">
+        <div class="profile" onclick="window.location.href='/index'">
             <img src="https://cdn.pfps.gg/pfps/5608-blue-kirby.png" alt="Profile Picture" class="pfp">
             <div class="text-container">
                 <h2 class="name">Korp</h2>
-                <p class="bio">Click to View Korp's Profile!</p>
+                <p class="bio">Click to View Full Profile</p>
             </div>
         </div>
         <!-- Add more profile sections here -->
     </div>
+
+    <script>
+        function showContent(tab) {
+            const contents = document.querySelectorAll('.content');
+            const tabs = document.querySelectorAll('.tab');
+
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            tabs.forEach(t => {
+                t.classList.remove('active');
+            });
+
+            document.getElementById(tab).classList.add('active');
+            document.querySelector(`.tab[onclick*="${tab}"]`).classList.add('active');
+        }
+    </script>
 </body>
 </html>
