@@ -1,1 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>korp :3</title>
+  
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            background-image: url('https://media.discordapp.net/attachments/1297718813273362546/1300215610244075581/moon-gazing-ii.png?ex=672007a6&is=671eb626&hm=267dc3aab30784d240094a2696ef54d96cc718f86a5c2cfa9c87b77511b18146&=&format=webp&quality=lossless'); /*backround*/
+            background-size: cover; /* Cover the entire background */
+            color: white;
+        }
+
+        /* Main Content Styling */
+        #content {
+            text-align: center;
+            backdrop-filter: blur(5px); /* Optional: add a blur effect for better readability */
+            padding: 20px; /* Add some padding for aesthetics */
+            border-radius: 15px; /* Rounded corners */
+            background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+        }
+
+        /* Name Styling */
+        #name {
+            font-size: 3em;
+            font-weight: bold;
+            color: #ffffff; /* Change text color */
+        }
+
+        /* Profile Picture */
+        #profile-pic {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-top: 20px;
+            border: 3px solid #555;
+        }
+
+        /* Bio Styling */
+        #bio {
+            max-width: 300px;
+            font-size: 1.1em;
+            color: #aaa; /* Change bio text color */
+            margin: 15px 0;
+        }
+
+        /* Coding Icons */
+        .icon-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.2s;
+        }
+
+        .icon:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+  
+    <!-- Centered Content -->
+    <div id="content">
+        <!-- Name -->
+        <div id="name">4ean</div>
+        
+        <!-- Profile Picture -->
+        <img id="profile-pic" src="https://cdn.pfps.gg/pfps/5608-blue-kirby.png" alt="Profile Picture">
+        
+        <!-- Bio Text -->
+        <p id="bio">Lua-based man.</p>
+
+        <!-- Coding Language Icons -->
+        <div class="icon-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Lua-Logo.svg" alt="Lua" class="icon">
+        </div>
+    </div>
+
+</body>
+</html>
 
