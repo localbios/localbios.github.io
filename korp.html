@@ -24,7 +24,6 @@
             background-image: url('https://i.pinimg.com/originals/fd/40/a4/fd40a4b8b151c4e432106576187d03c9.gif'); /* Pixel art GIF background */
             background-size: cover; /* Cover the entire background */
             color: white;
-            position: relative; /* Position relative for absolute children */
         }
 
         /* Main Content Styling */
@@ -80,42 +79,15 @@
 
         /* Audio Player Styling */
         #audio-player {
-            position: absolute; /* Position at the bottom left */
-            left: 20px;
+            position: fixed;
             bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            font-size: 1em;
-            color: #fff;
-            backdrop-filter: blur(10px); /* Blur effect for the player */
-            border-radius: 10px; /* Rounded corners */
-            padding: 10px; /* Padding for aesthetics */
-            background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
-        }
-
-        /* Progress Bar */
-        #progress {
-            width: 100px; /* Set a fixed width for the progress bar */
-            height: 5px;
-            background: #555;
-            cursor: pointer;
-            margin: 0 10px;
-        }
-
-        /* Button Styling */
-        .audio-button {
-            background: rgba(255, 255, 255, 0.3); /* Semi-transparent button background */
-            border: none;
-            border-radius: 5px; /* Rounded button corners */
+            left: 20px;
+            backdrop-filter: blur(5px);
+            padding: 10px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
             color: white;
-            padding: 5px 10px; /* Padding for buttons */
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .audio-button:hover {
-            background: rgba(255, 255, 255, 0.5); /* Change background on hover */
+            font-size: 1em;
         }
     </style>
 </head>
@@ -140,45 +112,8 @@
         </div>
     </div>
 
-    <!-- Audio Player -->
-    <div id="audio-player">
-        <audio id="audio" controls>
-            <source src="https://www.musicverter.com/4b1ddb56-9b52-485e-b470-b716de7366a7" type="audio/mpeg"> <!-- Music link -->
-            Your browser does not support the audio element.
-        </audio>
-        <input type="range" id="progress" value="0" step="1" min="0" />
-        <button class="audio-button" id="play">Play</button>
-        <button class="audio-button" id="pause">Pause</button>
-        <span id="song-title">90MH</span> <!-- Change manually -->
-    </div>
+    <!-- Audio Player (Autoplay) -->
+    <audio id="audio-player" src="https://www.musicverter.com/4b1ddb56-9b52-485e-b470-b716de7366a7" autoplay loop></audio>
 
-    <script>
-        const audio = document.getElementById('audio');
-        const progress = document.getElementById('progress');
-        const songTitle = document.getElementById('song-title');
-        const playButton = document.getElementById('play');
-        const pauseButton = document.getElementById('pause');
-
-        // Update progress bar as the audio plays
-        audio.addEventListener('timeupdate', () => {
-            progress.value = (audio.currentTime / audio.duration) * 100 || 0;
-        });
-
-        // Seek the audio when the progress bar is clicked
-        progress.addEventListener('input', () => {
-            audio.currentTime = (progress.value / 100) * audio.duration;
-        });
-
-        // Play the audio
-        playButton.addEventListener('click', () => {
-            audio.play();
-        });
-
-        // Pause the audio
-        pauseButton.addEventListener('click', () => {
-            audio.pause();
-        });
-    </script>
-    
 </body>
 </html>
