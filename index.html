@@ -21,7 +21,7 @@
             min-height: 100vh;
             font-family: Arial, sans-serif;
             overflow: hidden;
-            background-image: url('https://i.pinimg.com/originals/fd/40/a4/fd40a4b8b151c4e432106576187d03c9.gif'); /* Pixel art GIF background */
+            background-image: url('https://media.giphy.com/media/l3q2Kf6bG0z8VtYVq/giphy.gif'); /* Pixel art GIF background */
             background-size: cover; /* Cover the entire background */
             color: white;
         }
@@ -29,8 +29,10 @@
         /* Main Content Styling */
         #content {
             text-align: center;
+            backdrop-filter: blur(5px); /* Optional: add a blur effect for better readability */
             padding: 20px; /* Add some padding for aesthetics */
             border-radius: 15px; /* Rounded corners */
+            background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
         }
 
         /* Name Styling */
@@ -38,13 +40,6 @@
             font-size: 3em;
             font-weight: bold;
             color: #ffffff; /* Change text color */
-        }
-
-        /* Optional Background for Name */
-        .name-background {
-            background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-            padding: 10px; /* Padding around the name */
-            border-radius: 8px; /* Rounded corners for the background */
         }
 
         /* Profile Picture */
@@ -87,14 +82,14 @@
   
     <!-- Centered Content -->
     <div id="content">
-        <!-- Name with Optional Background -->
-        <div id="name" class="name-background">korp!</div> <!-- Add or remove "name-background" class to toggle background -->
-
+        <!-- Name -->
+        <div id="name">korp!</div>
+        
         <!-- Profile Picture -->
-        <img id="profile-pic" src="https://cdn.pfps.gg/pfps/5608-blue-kirby.png" alt="Profile Picture">
+        <img id="profile-pic" src="https://via.placeholder.com/150" alt="Profile Picture">
         
         <!-- Bio Text -->
-        <p id="bio">LocalBios Founder</p>
+        <p id="bio">Loading...</p>
 
         <!-- Coding Language Icons -->
         <div class="icon-container">
@@ -104,5 +99,17 @@
         </div>
     </div>
 
+    <script>
+        // Fetch the bio from a raw Pastebin link
+        fetch('https://pastebin.com/raw/your_link') // Replace with your actual Pastebin raw link
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('bio').innerText = data;
+            })
+            .catch(error => {
+                console.error('Error fetching the bio:', error);
+                document.getElementById('bio').innerText = 'Failed to load bio.';
+            });
+    </script>
 </body>
 </html>
