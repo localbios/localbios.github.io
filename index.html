@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>korp :3</title>
+  <title>Korp Profile</title>
   
   <style>
     /* Basic Reset */
@@ -18,56 +18,42 @@
       justify-content: center;
       min-height: 100vh;
       font-family: Arial, sans-serif;
-      overflow: hidden;
-      background: linear-gradient(135deg, #000000, #333333, #ffffff);
-      background-size: 300% 300%;
-      animation: bgGradient 8s ease infinite;
+      background-color: #1c1c1c;
       color: white;
     }
 
-    /* Background Gradient Animation */
-    @keyframes bgGradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* Main Content Styling */
-    #content {
+    /* Profile Card Styling */
+    #profile-card {
       text-align: center;
+      background-color: #2e2e2e;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    /* Name Gradient Animation */
+    /* Profile Name */
     #name {
-      font-size: 3em;
+      font-size: 2.5em;
       font-weight: bold;
-      background: linear-gradient(90deg, #ffffff, #333333);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      animation: nameGradient 3s ease-in-out infinite;
-    }
-
-    @keyframes nameGradient {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
+      margin-bottom: 10px;
     }
 
     /* Profile Picture */
     #profile-pic {
       border-radius: 50%;
-      width: 150px;
-      height: 150px;
-      margin-top: 20px;
-      border: 3px solid #555;
+      width: 120px;
+      height: 120px;
+      margin: 15px 0;
+      border: 2px solid #555;
     }
 
-    /* Bio Styling */
+    /* Bio Text */
     #bio {
-      max-width: 300px;
-      font-size: 1.1em;
-      color: #aaa;
-      margin: 15px 0;
+      max-width: 250px;
+      font-size: 1em;
+      color: #ccc;
+      margin: 10px 0 20px;
     }
 
     /* Button Icons */
@@ -75,11 +61,11 @@
       display: flex;
       gap: 15px;
       justify-content: center;
-      margin: 20px 0;
+      margin-top: 15px;
     }
     .button {
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       transition: transform 0.2s;
     }
     .button:hover {
@@ -94,8 +80,8 @@
       margin-top: 20px;
     }
     .icon {
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
       transition: transform 0.2s;
     }
     .icon:hover {
@@ -105,16 +91,16 @@
 </head>
 <body>
   
-  <!-- Centered Content -->
-  <div id="content">
-    <!-- Gradient Name -->
-    <div id="name">korp!</div>
+  <!-- Profile Card -->
+  <div id="profile-card">
+    <!-- Profile Name -->
+    <div id="name">korp</div>
     
     <!-- Profile Picture -->
-    <img id="profile-pic" src="https://via.placeholder.com/150" alt="Profile Picture">
+    <img id="profile-pic" src="https://via.placeholder.com/120" alt="Profile Picture">
     
     <!-- Bio Text -->
-    <p id="bio">hey welcome to my page, im korp and i made this website</p>
+    <p id="bio">Hey, welcome to my page! I'm Korp, and I made this website.</p>
     
     <!-- Social Media Buttons -->
     <div class="button-container">
@@ -124,8 +110,8 @@
       <a href="https://www.tiktok.com" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/Tiktok_logo_%282022%29.svg/1200px-Tiktok_logo_%282022%29.svg.png" alt="TikTok" class="button">
       </a>
-      <a href="discord.html" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/98/Discord_logo.svg/1200px-Discord_logo.svg.png" alt="Discord" class="button">
+      <a href="https://discord.com" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Discord_Logo_sans_text.svg" alt="Discord" class="button">
       </a>
     </div>
     
