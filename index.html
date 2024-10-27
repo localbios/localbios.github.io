@@ -104,6 +104,33 @@
             opacity: 0.9;
         }
 
+        /* Blog Styles */
+        .blog-post {
+            background-color: #2e2e2e; /* Dark background for blog post */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            margin: 10px 0;
+            padding: 15px;
+        }
+
+        .blog-title {
+            font-weight: bold;
+            color: #ffdd57;
+            margin: 0 0 5px;
+        }
+
+        .blog-content {
+            color: #ffffff;
+            font-size: 0.85em;
+            margin: 0;
+        }
+
+        .blog-footer {
+            margin-top: 10px;
+            color: #999999; /* Light gray for footer */
+            font-size: 0.75em;
+        }
+
         @media (max-width: 600px) {
             .content {
                 width: 90%; /* Responsive width */
@@ -126,6 +153,7 @@
     <div class="tabs">
         <div class="tab active" onclick="showContent('home')">Home</div>
         <div class="tab" onclick="showContent('profiles')">Users</div>
+        <div class="tab" onclick="showContent('blog')">Blog</div>
     </div>
 
     <div id="home" class="content active">
@@ -142,6 +170,20 @@
             </div>
         </div>
         <!-- Add more profile sections here -->
+    </div>
+
+    <div id="blog" class="content">
+        <div class="blog-post">
+            <h3 class="blog-title">First Blog Post</h3>
+            <p class="blog-content">This is the content of the first blog post. Stay tuned for more updates!</p>
+            <p class="blog-footer">Posted on: October 1, 2024</p>
+        </div>
+        <div class="blog-post">
+            <h3 class="blog-title">Second Blog Post</h3>
+            <p class="blog-content">Here's another blog post to keep you engaged. More content coming soon!</p>
+            <p class="blog-footer">Posted on: October 15, 2024</p>
+        </div>
+        <!-- Add more blog posts here -->
     </div>
 
     <script>
