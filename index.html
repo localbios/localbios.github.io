@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>korp :3</title>
+  
     <style>
         /* Basic Reset */
         * {
@@ -20,7 +21,7 @@
             min-height: 100vh;
             font-family: Arial, sans-serif;
             overflow: hidden;
-            background-image: url('https://i.pinimg.com/originals/fd/40/a4/fd40a4b8b151c4e432106576187d03c9.gif'); /* Pixel art GIF background */
+            background-image: url('https://media.giphy.com/media/l3q2Kf6bG0z8VtYVq/giphy.gif'); /* Pixel art GIF background */
             background-size: cover; /* Cover the entire background */
             color: white;
         }
@@ -57,27 +58,10 @@
 
         /* Bio Styling */
         #bio {
-            position: relative; /* Set position to relative for the pseudo-element */
             max-width: 300px;
             font-size: 1.1em;
             color: #aaa; /* Change bio text color */
             margin: 15px 0;
-            padding: 10px; /* Add padding for the text */
-            z-index: 1; /* Ensure the text is above the blurred background */
-        }
-
-        /* Blurry Background for Bio */
-        #bio::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-            filter: blur(10px); /* Blur effect */
-            border-radius: 10px; /* Rounded corners for the background */
-            z-index: -1; /* Place the background behind the text */
         }
 
         /* Coding Icons */
@@ -110,7 +94,7 @@
         <img id="profile-pic" src="https://via.placeholder.com/150" alt="Profile Picture">
         
         <!-- Bio Text -->
-        <p id="bio">LocalBios Founder</p>
+        <p id="bio">Loading...</p>
 
         <!-- Coding Language Icons -->
         <div class="icon-container">
@@ -119,5 +103,18 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" class="icon">
         </div>
     </div>
+
+    <script>
+        // Fetch the bio from a raw Pastebin link
+        fetch('https://pastebin.com/raw/your_link') // Replace with your actual Pastebin raw link
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('bio').innerText = data;
+            })
+            .catch(error => {
+                console.error('Error fetching the bio:', error);
+                document.getElementById('bio').innerText = 'Failed to load bio.';
+            });
+    </script>
 </body>
 </html>
