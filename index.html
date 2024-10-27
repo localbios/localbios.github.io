@@ -94,7 +94,7 @@
         <img id="profile-pic" src="https://via.placeholder.com/150" alt="Profile Picture">
         
         <!-- Bio Text -->
-        <p id="bio">Loading...</p>
+        <p id="bio">LocalBios Founder</p>
 
         <!-- Coding Language Icons -->
         <div class="icon-container">
@@ -103,18 +103,5 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" class="icon">
         </div>
     </div>
-
-    <script>
-        // Fetch the bio from a raw Pastebin link
-        fetch('https://pastebin.com/raw/qj4Qz9jH') // Replace with your actual Pastebin raw link
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('bio').innerText = data;
-            })
-            .catch(error => {
-                console.error('Error fetching the bio:', error);
-                document.getElementById('bio').innerText = 'Failed to load bio.';
-            });
-    </script>
 </body>
 </html>
