@@ -59,22 +59,23 @@
       animation: fadeIn 1.5s ease;
     }
 
-    /* Button Icons */
-    .button-container {
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      margin-top: 15px;
-      animation: popIn 1.5s ease;
-    }
-    .button {
-      width: 40px;
-      height: 40px;
-      transition: transform 0.2s;
+    /* Discord Status Section */
+    #discord-status {
+      background-color: #36393f;
+      color: #b9bbbe;
       border-radius: 5px;
+      padding: 10px;
+      margin-top: 20px;
+      animation: fadeIn 1.5s ease;
     }
-    .button:hover {
-      transform: scale(1.1);
+    .status-title {
+      color: white;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    .status-indicator {
+      margin-top: 5px;
+      font-size: 1.1em;
     }
 
     /* Coding Icons */
@@ -94,26 +95,6 @@
     .icon:hover {
       transform: scale(1.1);
       filter: brightness(1);
-    }
-
-    /* Embed Box */
-    .embed-box {
-      background-color: #36393f;
-      color: #b9bbbe;
-      border-left: 5px solid #5865f2;
-      padding: 10px;
-      margin-top: 20px;
-      border-radius: 5px;
-      animation: fadeIn 1.5s ease;
-    }
-    .embed-title {
-      color: white;
-      font-size: 1.2em;
-      font-weight: bold;
-    }
-    .embed-description {
-      font-size: 0.9em;
-      color: #b9bbbe;
     }
 
     /* Animations */
@@ -144,35 +125,43 @@
     <img id="profile-pic" src="https://via.placeholder.com/120" alt="Profile Picture">
     
     <!-- Bio Text -->
-    <p id="bio">Hey, welcome to my page! I'm Korp, and I made this website.</p>
+    <p id="bio">heyo, this is my website for silly stuff i make! </p>
     
-    <!-- Social Media Buttons -->
-    <div class="button-container">
-      <a href="https://www.youtube.com" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube" class="button">
-      </a>
-      <a href="https://www.tiktok.com" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/TikTok-logo.svg" alt="TikTok" class="button">
-      </a>
-      <a href="https://discord.com" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Discord_Logo_sans_text.svg" alt="Discord" class="button">
-      </a>
+    <!-- Discord Status Section -->
+    <div id="discord-status">
+      <div class="status-title">Discord Status</div>
+      <div class="status-indicator" id="status-indicator">Checking...</div>
     </div>
     
     <!-- Coding Language Icons -->
     <div class="icon-container">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png" alt="C#" class="icon">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML" class="icon">
       <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS" class="icon">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" class="icon">
     </div>
-
-    <!-- Embed Box -->
-    <div class="embed-box">
-      <div class="embed-title">korp</div>
-      <div class="embed-description">korp's silly website</div>
-    </div>
   </div>
 
+  <script>
+    // Simulating Discord status check
+    const statusIndicator = document.getElementById('status-indicator');
+
+    // Function to simulate checking online status
+    function checkDiscordStatus() {
+      // Simulated status: true for online, false for offline
+      const isOnline = Math.random() < 0.5; // Randomly choose online or offline
+      
+      if (isOnline) {
+        statusIndicator.textContent = "Online";
+        statusIndicator.style.color = "green"; // Set text color to green for online
+      } else {
+        statusIndicator.textContent = "Offline";
+        statusIndicator.style.color = "red"; // Set text color to red for offline
+      }
+    }
+
+    // Check status on page load
+    window.onload = checkDiscordStatus;
+  </script>
+  
 </body>
 </html>
