@@ -1,77 +1,123 @@
-<style>
-    /* Basic Reset */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>korp :3</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Body Styling */
-    body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        font-family: Arial, sans-serif;
-        overflow: hidden;
-        background-image: url('https://i.pinimg.com/originals/fd/40/a4/fd40a4b8b151c4e432106576187d03c9.gif'); /* Pixel art GIF background */
-        background-size: cover; /* Cover the entire background */
-        color: white;
-    }
+        /* Body Styling */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            background-image: url('https://i.pinimg.com/originals/fd/40/a4/fd40a4b8b151c4e432106576187d03c9.gif'); /* Pixel art GIF background */
+            background-size: cover; /* Cover the entire background */
+            color: white;
+        }
 
-    /* Main Content Styling */
-    #content {
-        text-align: center;
-        padding: 20px; /* Add some padding for aesthetics */
-        border-radius: 15px; /* Rounded corners */
-    }
+        /* Main Content Styling */
+        #content {
+            text-align: center;
+            padding: 20px; /* Add some padding for aesthetics */
+            border-radius: 15px; /* Rounded corners */
+        }
 
-    /* Name Styling */
-    #name {
-        font-size: 3em;
-        font-weight: bold;
-        color: #ffffff; /* Change text color */
-    }
+        /* Name Styling */
+        #name {
+            font-size: 3em;
+            font-weight: bold;
+            color: #ffffff; /* Change text color */
+        }
 
-    /* Optional Background for Name */
-    .name-background {
-        background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-        padding: 10px; /* Padding around the name */
-        border-radius: 8px; /* Rounded corners for the background */
-    }
+        /* Optional Background for Name */
+        .name-background {
+            background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+            padding: 10px; /* Padding around the name */
+            border-radius: 8px; /* Rounded corners for the background */
+        }
 
-    /* Profile Picture */
-    #profile-pic {
-        border-radius: 50%;
-        width: 150px;
-        height: 150px;
-        margin-top: 20px;
-        border: 3px solid #555;
-    }
+        /* Profile Picture */
+        #profile-pic {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-top: 20px;
+            border: 3px solid #555;
+        }
 
-    /* Bio Styling */
-    #bio {
-        max-width: 300px;
-        font-size: 1.1em;
-        color: #aaa; /* Change bio text color */
-        margin: 15px 0;
-    }
+        /* Bio Styling */
+        #bio {
+            position: relative; /* Set position to relative for the pseudo-element */
+            max-width: 300px;
+            font-size: 1.1em;
+            color: #aaa; /* Change bio text color */
+            margin: 15px 0;
+            padding: 10px; /* Add padding for the text */
+            z-index: 1; /* Ensure the text is above the blurred background */
+        }
 
-    /* Coding Icons */
-    .icon-container {
-        display: flex;
-        gap: 10px;
-        justify-content: center;
-        margin-top: 20px;
-    }
+        /* Blurry Background for Bio */
+        #bio::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            filter: blur(10px); /* Blur effect */
+            border-radius: 10px; /* Rounded corners for the background */
+            z-index: -1; /* Place the background behind the text */
+        }
 
-    .icon {
-        width: 40px;
-        height: 40px;
-        transition: transform 0.2s;
-    }
+        /* Coding Icons */
+        .icon-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
 
-    .icon:hover {
-        transform: scale(1.1);
-    }
-</style>
+        .icon {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.2s;
+        }
+
+        .icon:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+  
+    <!-- Centered Content -->
+    <div id="content">
+        <!-- Name with Optional Background -->
+        <div id="name" class="name-background">korp!</div> <!-- Add or remove "name-background" class to toggle background -->
+
+        <!-- Profile Picture -->
+        <img id="profile-pic" src="https://via.placeholder.com/150" alt="Profile Picture">
+        
+        <!-- Bio Text -->
+        <p id="bio">LocalBios Founder</p>
+
+        <!-- Coding Language Icons -->
+        <div class="icon-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML" class="icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS" class="icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" class="icon">
+        </div>
+    </div>
+</body>
+</html>
