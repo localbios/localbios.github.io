@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CHROMAKOPIA, DROPS OCT 28TH AT 6AM</title>
+
+    <!-- Google Fonts Link for Poleno Semi Bold -->
+    <link href="https://fonts.googleapis.com/css2?family=Poleno:wght@600&display=swap" rel="stylesheet">
+
     <style>
         /* Basic Reset */
         * {
@@ -20,7 +24,7 @@
             flex-direction: column;
             min-height: 100vh;
             background-color: #12793d; /* Green background */
-            font-family: Arial, sans-serif;
+            font-family: 'Poleno', sans-serif; /* Use Poleno Semi Bold font */
             color: #fff;
             text-align: center;
         }
@@ -37,9 +41,30 @@
             font-size: 2em;
             margin-top: 20px;
         }
+
+        /* Header with Link to Main Page */
+        #header {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        #header:hover {
+            background-color: rgba(255, 255, 255, 0.4); /* Darker on hover */
+        }
     </style>
 </head>
 <body>
+
+    <!-- Header with Tab to Main Page -->
+    <a id="header" href="index.html" target="_blank">Back to Profile</a>
 
     <!-- CHROMOKOPIA Logo -->
     <img id="logo" src="https://pixelframe.design/wp-content/uploads/2024/10/Chromakopia_album-cover_tyler-Creator_full-large.jpeg" alt="CHROMOKOPIA Logo">
@@ -59,7 +84,7 @@
             // Find the distance between now and the countdown date
             const distance = countdownDate - now;
 
-            // Time calculations for days, hours, minutes and seconds
+            // Time calculations for days, hours, minutes, and seconds
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
