@@ -12,6 +12,8 @@
             padding: 0;
             box-sizing: border-box;
         }
+
+        /* Body Styling */
         body {
             display: flex;
             align-items: center;
@@ -19,24 +21,25 @@
             min-height: 100vh;
             font-family: Arial, sans-serif;
             overflow: hidden;
-            background-color: #12793d; /* Green background */
+            background-image: url('https://media.giphy.com/media/l3q2Kf6bG0z8VtYVq/giphy.gif'); /* Pixel art GIF background */
+            background-size: cover; /* Cover the entire background */
             color: white;
         }
 
         /* Main Content Styling */
         #content {
             text-align: center;
+            backdrop-filter: blur(5px); /* Optional: add a blur effect for better readability */
+            padding: 20px; /* Add some padding for aesthetics */
+            border-radius: 15px; /* Rounded corners */
+            background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
         }
 
-        /* Name Gradient Animation */
+        /* Name Styling */
         #name {
             font-size: 3em;
             font-weight: bold;
-            background: linear-gradient(90deg, #ffffff, #333333);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            animation: nameGradient 3s ease-in-out infinite;
+            color: #ffffff; /* Change text color */
         }
 
         /* Profile Picture */
@@ -52,24 +55,8 @@
         #bio {
             max-width: 300px;
             font-size: 1.1em;
-            color: #aaa;
+            color: #aaa; /* Change bio text color */
             margin: 15px 0;
-        }
-
-        /* Button Icons */
-        .button-container {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin: 20px 0;
-        }
-        .button {
-            width: 50px;
-            height: 50px;
-            transition: transform 0.2s;
-        }
-        .button:hover {
-            transform: scale(1.1);
         }
 
         /* Coding Icons */
@@ -79,11 +66,13 @@
             justify-content: center;
             margin-top: 20px;
         }
+
         .icon {
             width: 40px;
             height: 40px;
             transition: transform 0.2s;
         }
+
         .icon:hover {
             transform: scale(1.1);
         }
@@ -93,28 +82,15 @@
   
     <!-- Centered Content -->
     <div id="content">
-        <!-- Gradient Name -->
+        <!-- Name -->
         <div id="name">korp!</div>
         
         <!-- Profile Picture -->
-        <img id="profile-pic" src="https://cdn.pfps.gg/pfps/5608-blue-kirby.png" alt="Profile Picture">
+        <img id="profile-pic" src="https://via.placeholder.com/150" alt="Profile Picture">
         
         <!-- Bio Text -->
         <p id="bio">Loading...</p>
-        
-        <!-- Social Media Buttons -->
-        <div class="button-container">
-            <a href="https://www.youtube.com" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube" class="button">
-            </a>
-            <a href="https://www.tiktok.com" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/Tiktok_logo_%282022%29.svg/1200px-Tiktok_logo_%282022%29.svg.png" alt="TikTok" class="button">
-            </a>
-            <a href="discord.html" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/98/Discord_logo.svg/1200px-Discord_logo.svg.png" alt="Discord" class="button">
-            </a>
-        </div>
-        
+
         <!-- Coding Language Icons -->
         <div class="icon-container">
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML" class="icon">
@@ -132,7 +108,7 @@
             })
             .catch(error => {
                 console.error('Error fetching the bio:', error);
-                document.getElementById('bio').innerText = 'dm me if you see this text to fix the fucking paste';
+                document.getElementById('bio').innerText = 'Failed to load bio.';
             });
     </script>
 </body>
