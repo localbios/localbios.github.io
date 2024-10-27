@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Korp Profile</title>
+    <title>korp :3</title>
+  
     <style>
         /* Basic Reset */
         * {
@@ -11,92 +12,64 @@
             padding: 0;
             box-sizing: border-box;
         }
-
-        /* Body Styling */
         body {
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-direction: column;
             min-height: 100vh;
             font-family: Arial, sans-serif;
-            background-color: #1c1c1c;
+            overflow: hidden;
+            background-color: #12793d; /* Green background */
             color: white;
-            position: relative; /* To position the tab correctly */
         }
 
-        /* Header with Tab */
-        #header {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-size: 1.2em;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-
-        #header:hover {
-            background-color: rgba(255, 255, 255, 0.4); /* Darker on hover */
-        }
-
-        /* Profile Card Styling */
-        #profile-card {
+        /* Main Content Styling */
+        #content {
             text-align: center;
-            background-color: #2e2e2e;
-            padding: 20px;
-            border-radius: 10px;
-            width: 300px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            animation: fadeIn 1.5s ease;
         }
 
-        /* Profile Name */
+        /* Name Gradient Animation */
         #name {
-            font-size: 2.5em;
+            font-size: 3em;
             font-weight: bold;
-            margin-bottom: 10px;
-            animation: slideIn 1s ease-out;
+            background: linear-gradient(90deg, #ffffff, #333333);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: nameGradient 3s ease-in-out infinite;
         }
 
         /* Profile Picture */
         #profile-pic {
             border-radius: 50%;
-            width: 120px;
-            height: 120px;
-            margin: 15px 0;
-            border: 2px solid #555;
-        }
-
-        /* Bio Text */
-        #bio {
-            max-width: 250px;
-            font-size: 1em;
-            color: #ccc;
-            margin: 10px 0 20px;
-            animation: fadeIn 1.5s ease;
-        }
-
-        /* Discord Status Section */
-        #discord-status {
-            background-color: #36393f;
-            color: #b9bbbe;
-            border-radius: 5px;
-            padding: 10px;
+            width: 150px;
+            height: 150px;
             margin-top: 20px;
-            animation: fadeIn 1.5s ease;
+            border: 3px solid #555;
         }
-        .status-title {
-            color: white;
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-        .status-indicator {
-            margin-top: 5px;
+
+        /* Bio Styling */
+        #bio {
+            max-width: 300px;
             font-size: 1.1em;
+            color: #aaa;
+            margin: 15px 0;
+        }
+
+        /* Button Icons */
+        .button-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .button {
+            width: 50px;
+            height: 50px;
+            transition: transform 0.2s;
+        }
+        .button:hover {
+            transform: scale(1.1);
         }
 
         /* Coding Icons */
@@ -105,56 +78,41 @@
             gap: 10px;
             justify-content: center;
             margin-top: 20px;
-            animation: popIn 1.5s ease;
         }
         .icon {
-            width: 30px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
             transition: transform 0.2s;
-            filter: brightness(0.8);
         }
         .icon:hover {
             transform: scale(1.1);
-            filter: brightness(1);
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideIn {
-            from { transform: translateY(-20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes popIn {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
         }
     </style>
 </head>
 <body>
   
-    <!-- Header with Tab -->
-    <a id="header" href="chromakopia.html" target="_blank">CHROMAKOPIA</a>
-
-    <!-- Profile Card -->
-    <div id="profile-card">
-        <!-- Profile Name -->
-        <div id="name">korp</div>
+    <!-- Centered Content -->
+    <div id="content">
+        <!-- Gradient Name -->
+        <div id="name">korp!</div>
         
         <!-- Profile Picture -->
-        <img id="profile-pic" src="https://via.placeholder.com/120" alt="Profile Picture">
+        <img id="profile-pic" src="https://via.placeholder.com/150" alt="Profile Picture">
         
         <!-- Bio Text -->
-        <p id="bio">Hey, welcome to my page! I'm Korp, and I made this website.</p>
+        <p id="bio">Loading...</p>
         
-        <!-- Discord Status Section -->
-        <div id="discord-status">
-            <div class="status-title">Discord Status</div>
-            <div class="status-indicator" id="status-indicator">Checking...</div>
+        <!-- Social Media Buttons -->
+        <div class="button-container">
+            <a href="https://www.youtube.com" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube" class="button">
+            </a>
+            <a href="https://www.tiktok.com" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/Tiktok_logo_%282022%29.svg/1200px-Tiktok_logo_%282022%29.svg.png" alt="TikTok" class="button">
+            </a>
+            <a href="discord.html" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/98/Discord_logo.svg/1200px-Discord_logo.svg.png" alt="Discord" class="button">
+            </a>
         </div>
         
         <!-- Coding Language Icons -->
@@ -166,26 +124,16 @@
     </div>
 
     <script>
-        // Simulating Discord status check
-        const statusIndicator = document.getElementById('status-indicator');
-
-        // Function to simulate checking online status
-        function checkDiscordStatus() {
-            // Simulated status: true for online, false for offline
-            const isOnline = Math.random() < 0.5; // Randomly choose online or offline
-            
-            if (isOnline) {
-                statusIndicator.textContent = "Online";
-                statusIndicator.style.color = "green"; // Set text color to green for online
-            } else {
-                statusIndicator.textContent = "Do Not Disturb";
-                statusIndicator.style.color = "red"; // Set text color to red for offline
-            }
-        }
-
-        // Check status on page load
-        window.onload = checkDiscordStatus;
+        // Fetch the bio from a raw Pastebin link
+        fetch('https://pastebin.com/raw/your_link') // Replace with your actual Pastebin raw link
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('bio').innerText = data;
+            })
+            .catch(error => {
+                console.error('Error fetching the bio:', error);
+                document.getElementById('bio').innerText = 'dm me if you see this text to fix the fucking paste';
+            });
     </script>
-  
 </body>
 </html>
