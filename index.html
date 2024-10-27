@@ -1,167 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>korp :3</title>
-  
-  <style>
-    /* Basic Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      font-family: Arial, sans-serif;
-      background-color: #1c1c1c;
-      color: white;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korp Profile</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Profile Card Styling */
-    #profile-card {
-      text-align: center;
-      background-color: #2e2e2e;
-      padding: 20px;
-      border-radius: 10px;
-      width: 300px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      animation: fadeIn 1.5s ease;
-    }
+        /* Body Styling */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c;
+            color: white;
+            position: relative; /* To position the tab correctly */
+        }
 
-    /* Profile Name */
-    #name {
-      font-size: 2.5em;
-      font-weight: bold;
-      margin-bottom: 10px;
-      animation: slideIn 1s ease-out;
-    }
+        /* Header with Tab */
+        #header {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
 
-    /* Profile Picture */
-    #profile-pic {
-      border-radius: 50%;
-      width: 120px;
-      height: 120px;
-      margin: 15px 0;
-      border: 2px solid #555;
-    }
+        #header:hover {
+            background-color: rgba(255, 255, 255, 0.4); /* Darker on hover */
+        }
 
-    /* Bio Text */
-    #bio {
-      max-width: 250px;
-      font-size: 1em;
-      color: #ccc;
-      margin: 10px 0 20px;
-      animation: fadeIn 1.5s ease;
-    }
+        /* Profile Card Styling */
+        #profile-card {
+            text-align: center;
+            background-color: #2e2e2e;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease;
+        }
 
-    /* Discord Status Section */
-    #discord-status {
-      background-color: #36393f;
-      color: #b9bbbe;
-      border-radius: 5px;
-      padding: 10px;
-      margin-top: 20px;
-      animation: fadeIn 1.5s ease;
-    }
-    .status-title {
-      color: white;
-      font-size: 1.2em;
-      font-weight: bold;
-    }
-    .status-indicator {
-      margin-top: 5px;
-      font-size: 1.1em;
-    }
+        /* Profile Name */
+        #name {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            animation: slideIn 1s ease-out;
+        }
 
-    /* Coding Icons */
-    .icon-container {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      margin-top: 20px;
-      animation: popIn 1.5s ease;
-    }
-    .icon {
-      width: 30px;
-      height: 30px;
-      transition: transform 0.2s;
-      filter: brightness(0.8);
-    }
-    .icon:hover {
-      transform: scale(1.1);
-      filter: brightness(1);
-    }
+        /* Profile Picture */
+        #profile-pic {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            margin: 15px 0;
+            border: 2px solid #555;
+        }
 
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+        /* Bio Text */
+        #bio {
+            max-width: 250px;
+            font-size: 1em;
+            color: #ccc;
+            margin: 10px 0 20px;
+            animation: fadeIn 1.5s ease;
+        }
 
-    @keyframes slideIn {
-      from { transform: translateY(-20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
+        /* Discord Status Section */
+        #discord-status {
+            background-color: #36393f;
+            color: #b9bbbe;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 20px;
+            animation: fadeIn 1.5s ease;
+        }
+        .status-title {
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .status-indicator {
+            margin-top: 5px;
+            font-size: 1.1em;
+        }
 
-    @keyframes popIn {
-      from { transform: scale(0.8); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-  </style>
+        /* Coding Icons */
+        .icon-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+            animation: popIn 1.5s ease;
+        }
+        .icon {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.2s;
+            filter: brightness(0.8);
+        }
+        .icon:hover {
+            transform: scale(1.1);
+            filter: brightness(1);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
 </head>
 <body>
   
-  <!-- Profile Card -->
-  <div id="profile-card">
-    <!-- Profile Name -->
-    <div id="name">korp</div>
-    
-    <!-- Profile Picture -->
-    <img id="profile-pic" src="https://via.placeholder.com/120" alt="Profile Picture">
-    
-    <!-- Bio Text -->
-    <p id="bio">heyo, this is my website for silly stuff i make! </p>
-    
-    <!-- Discord Status Section -->
-    <div id="discord-status">
-      <div class="status-title">Discord Status</div>
-      <div class="status-indicator" id="status-indicator">Checking...</div>
+    <!-- Header with Tab -->
+    <a id="header" href="chromakopia.html" target="_blank">CHROMAKOPIA</a>
+
+    <!-- Profile Card -->
+    <div id="profile-card">
+        <!-- Profile Name -->
+        <div id="name">korp</div>
+        
+        <!-- Profile Picture -->
+        <img id="profile-pic" src="https://via.placeholder.com/120" alt="Profile Picture">
+        
+        <!-- Bio Text -->
+        <p id="bio">Hey, welcome to my page! I'm Korp, and I made this website.</p>
+        
+        <!-- Discord Status Section -->
+        <div id="discord-status">
+            <div class="status-title">Discord Status</div>
+            <div class="status-indicator" id="status-indicator">Checking...</div>
+        </div>
+        
+        <!-- Coding Language Icons -->
+        <div class="icon-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML" class="icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS" class="icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" class="icon">
+        </div>
     </div>
-    
-    <!-- Coding Language Icons -->
-    <div class="icon-container">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML" class="icon">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS" class="icon">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" class="icon">
-    </div>
-  </div>
 
-  <script>
-    // Simulating Discord status check
-    const statusIndicator = document.getElementById('status-indicator');
+    <script>
+        // Simulating Discord status check
+        const statusIndicator = document.getElementById('status-indicator');
 
-    // Function to simulate checking online status
-    function checkDiscordStatus() {
-      // Simulated status: true for online, false for offline
-      const isOnline = Math.random() < 0.5; // Randomly choose online or offline
-      
-      if (isOnline) {
-        statusIndicator.textContent = "Online";
-        statusIndicator.style.color = "green"; // Set text color to green for online
-      } else {
-        statusIndicator.textContent = "Do not Disturb.";
-        statusIndicator.style.color = "red"; // Set text color to red for offline
-      }
-    }
+        // Function to simulate checking online status
+        function checkDiscordStatus() {
+            // Simulated status: true for online, false for offline
+            const isOnline = Math.random() < 0.5; // Randomly choose online or offline
+            
+            if (isOnline) {
+                statusIndicator.textContent = "Online";
+                statusIndicator.style.color = "green"; // Set text color to green for online
+            } else {
+                statusIndicator.textContent = "Do Not Disturb";
+                statusIndicator.style.color = "red"; // Set text color to red for offline
+            }
+        }
 
-    // Check status on page load
-    window.onload = checkDiscordStatus;
-  </script>
+        // Check status on page load
+        window.onload = checkDiscordStatus;
+    </script>
   
 </body>
 </html>
